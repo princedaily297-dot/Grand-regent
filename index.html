@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grand Regent - Obsidian Clan Original</title>
+    <title>Grand Regent - Home</title>
     
-    <!-- Link to your CSS file -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles for the New Header -->
     <style>
         .hero-section {
             display: flex;
@@ -25,51 +22,48 @@
             border-bottom: 1px solid #222;
         }
         .profile-pic {
-            width: 140px;
-            height: 140px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #D4AF37;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
-            margin-bottom: 20px;
-        }
-        .clan-logo {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-            border: 2px solid #fff;
-            margin-bottom: 15px;
-            background: #000;
-        }
-        .clan-text {
-            color: #D4AF37;
-            font-size: 0.8rem;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 10px;
+            border: 4px solid #D4AF37;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+            margin-bottom: 25px;
         }
         .hero-title {
             font-family: 'Playfair Display', serif;
             color: #ffffff;
             font-size: 3.5rem;
             letter-spacing: 2px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.1;
         }
-        .clan-story {
-            max-width: 700px;
-            color: #aaa;
-            font-size: 0.95rem;
+        .story-text {
+            max-width: 800px;
+            color: #ccc;
+            font-size: 1.05rem;
             line-height: 1.8;
-            font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .clan-story { font-size: 0.85rem; }
+        
+        /* The Upcoming Movies Header Styling */
+        .movies-header {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+        .movies-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .movies-header p {
+            color: #888;
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -77,78 +71,44 @@
 
     <!-- NAVBAR -->
     <nav>
-        <a href="#" class="logo">Grand Regent</a>
+        <a href="index.html" class="logo">Grand Regent</a>
         <div class="nav-links">
-            <a href="#">Movies</a>
-            <a href="#">Artists</a>
-            <a href="#">Trailers</a>
+            <a href="index.html">Home</a>
+            <a href="clan.html">The Obsidian Clan</a>
         </div>
     </nav>
 
-    <!-- NEW HERO SECTION -->
+    <!-- HERO SECTION (Your Story) -->
     <header class="hero-section">
-        <!-- The Andrew Garfield Picture -->
+        <!-- Your Suit Picture -->
         <img src="https://i.ibb.co/5gSLvkfb/Screenshot-20261103-013413.jpg" alt="Grand Regent" class="profile-pic">
         
-        <!-- The Cropped Obsidian Clan Image -->
-        <img src="https://i.ibb.co/rfs8j3wn/85855a615ed210344167c576699484f6.jpg" alt="Obsidian Clan" class="clan-logo">
+        <h1 class="hero-title">THE GRAND REGENT</h1>
         
-        <p class="clan-text">Obsidian Clan Original</p>
-        <h1 class="hero-title">GRAND REGENT</h1>
-        
-        <p class="clan-story">
-            "Forged in the shadows of the cinematic universe, the Obsidian Clan was not born—it was carved. We are the curators of the unwritten, the protectors of the unproduced. Built on a foundation of pure black stone and golden vision, the Clan stands as a sanctuary for storytellers and visionaries. Every frame we touch is an Obsidian Original. Welcome to the inner circle."
+        <p class="story-text">
+            Born from a vision to redefine the cinematic landscape, I am the architect of a new era. As one of the first original founders, my journey is driven by a relentless pursuit of storytelling, excellence, and unbreakable loyalty to the circle. I do not just curate films; I curate experiences, legacies, and the future of entertainment. This is the standard. This is the Regent.
         </p>
+
+        <a href="clan.html" class="join-btn" style="text-decoration: none; padding: 12px 30px; border: 2px solid #D4AF37; color: #D4AF37; border-radius: 50px; font-weight: bold; letter-spacing: 2px;">Discover The Clan</a>
     </header>
 
-    <!-- ARTISTS SECTION -->
-    <h2 class="section-title">Starring Artists</h2>
-    <div class="artist-grid">
-        <!-- Artist 1 -->
-        <div>
-            <div class="artist-card">
-                <img src="https://i.ibb.co/V0dHfwtY/Screenshot-20261103-013420.jpg" alt="Keanu Reeves">
-            </div>
-            <div class="artist-name">Keanu Reeves</div>
-        </div>
-        <!-- Artist 2 -->
-        <div>
-            <div class="artist-card">
-                <img src="https://i.ibb.co/h11mJScJ/b0c30a33c9a9a9aa9ed4d63d7d22a191.jpg" alt="Ryan Reynolds">
-            </div>
-            <div class="artist-name">Ryan Reynolds</div>
-        </div>
-        <!-- Artist 3 -->
-        <div>
-            <div class="artist-card">
-                <img src="https://i.ibb.co/whTckYkg/62bbaad8acd75e8086375cf842a9baf5.jpg" alt="Zendaya">
-            </div>
-            <div class="artist-name">Zendaya</div>
-        </div>
-        <!-- Artist 4 -->
-        <div>
-            <div class="artist-card">
-                <img src="https://i.ibb.co/Jwy3Dw6y/b9e77c629f502b18110ed52aaf3bdd79.jpg" alt="Denzel Washington">
-            </div>
-            <div class="artist-name">Denzel Washington</div>
-        </div>
+    <!-- UPCOMING MOVIES SECTION -->
+    <div class="movies-header">
+        <h2>Upcoming Blockbusters</h2>
+        <p>The future of cinema</p>
     </div>
 
-    <!-- UPCOMING MOVIES SECTION -->
-    <h2 class="section-title">Upcoming Blockbusters</h2>
     <div class="movie-grid">
         
-        <!-- MOVIE 1 -->
         <div class="movie-card" onclick="openModal('Deadpool & Wolverine', '73_1biulkYk')">
             <span class="badge">In Cinemas</span>
-            <img src="https://i.ibb.co/DgQWQrwj/b23aaf69d8566db1ba5ecaa1187f44be.jpg" alt="Deadpool & Wolverine">
+            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine">
             <div class="movie-info">
                 <h3>Deadpool & Wolverine</h3>
                 <p>Action • Sci-Fi</p>
             </div>
         </div>
 
-        <!-- MOVIE 2 -->
         <div class="movie-card" onclick="openModal('Joker: Folie à Deux', 'xy8aJw1vYHo')">
             <span class="badge" style="background: #E50914; color: #fff;">Upcoming</span>
             <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Joker 2">
@@ -158,7 +118,6 @@
             </div>
         </div>
 
-        <!-- MOVIE 3 -->
         <div class="movie-card" onclick="openModal('Gladiator II', 'rShGgWkosG4')">
             <span class="badge" style="background: #E50914; color: #fff;">Upcoming</span>
             <img src="https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmdJdU7pB7Yzbu.jpg" alt="Gladiator 2">
@@ -168,7 +127,6 @@
             </div>
         </div>
 
-        <!-- MOVIE 4 -->
         <div class="movie-card" onclick="openModal('Venom: The Last Dance', '__2bjWbetsA')">
             <span class="badge" style="background: #E50914; color: #fff;">Upcoming</span>
             <img src="https://image.tmdb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg" alt="Venom 3">
@@ -194,4 +152,4 @@
 
     <script src="script.js"></script>
 </body>
-    </html>
+</html>
