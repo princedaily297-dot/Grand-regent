@@ -9,9 +9,15 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
+        body {
+            background: radial-gradient(circle at top, #1a1a1a 0%, #000000 100%);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
         .clan-hero {
             display: flex;
             flex-direction: column;
@@ -19,48 +25,58 @@
             text-align: center;
             padding: 80px 20px;
             min-height: 80vh;
+            justify-content: center;
         }
-        .clan-logo-large {
-            width: 180px;
-            height: 180px;
+
+        /* Big Clan Logo */
+        .clan-image {
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #D4AF37;
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
-            margin-bottom: 30px;
-        }
-        .clan-title {
-            font-family: 'Playfair Display', serif;
-            color: #D4AF37;
-            font-size: 3rem;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-        }
-        .clan-lore {
-            max-width: 800px;
-            color: #ccc;
-            font-size: 1.05rem;
-            line-height: 1.8;
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
             margin-bottom: 40px;
         }
-        .join-btn {
-            background: #D4AF37;
+
+        .clan-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: #D4AF37;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .clan-lore {
+            max-width: 750px;
+            color: #b3b3b3;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 50px;
+        }
+
+        .btn-whatsapp {
+            background: #25D366; /* WhatsApp Green */
             color: #000;
             padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: 800;
+            font-weight: 600;
+            font-size: 1rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            border-radius: 50px;
             text-decoration: none;
+            border-radius: 5px;
             transition: all 0.3s ease;
-            display: inline-block;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
-        .join-btn:hover {
+
+        .btn-whatsapp:hover {
             background: #fff;
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
     </style>
 </head>
@@ -68,28 +84,31 @@
 
     <!-- NAVBAR -->
     <nav>
-        <a href="index.html" class="logo">Grand Regent</a>
+        <a href="index.html" class="logo" style="color: #D4AF37; font-family: 'Cinzel', serif; font-size: 1.5rem; text-decoration: none;">GRAND REGENT</a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="clan.html" style="color: #D4AF37;">The Obsidian Clan</a>
+            <a href="index.html" style="color: #fff; text-decoration: none; margin-left: 20px;">Home</a>
+            <a href="clan.html" style="color: #D4AF37; text-decoration: none; margin-left: 20px;">The Clan</a>
         </div>
     </nav>
 
     <!-- CLAN SECTION -->
     <header class="clan-hero">
-        <!-- The Clan Logo -->
-        <img src="https://i.ibb.co/rfs8j3wn/85855a615ed210344167c576699484f6.jpg" alt="Obsidian Clan Logo" class="clan-logo-large">
         
-        <h1 class="clan-title">THE OBSIDIAN CLAN</h1>
+        <!-- THE CLAN LOGO -->
+        <img src="https://i.ibb.co/MxNjsZ0L/62bbaad8acd75e8086375cf842a9baf5.jpg" alt="Obsidian Clan Logo" class="clan-image">
+        
+        <h1 class="clan-title">OBSIDIAN CLAN</h1>
         
         <p class="clan-lore">
             Forged in the shadows of the cinematic universe, the Obsidian Clan was not born—it was carved. We are the curators of the unwritten, the protectors of the unproduced. Built on a foundation of pure black stone and golden vision, the Clan stands as a sanctuary for storytellers, visionaries, and those who see the world not as it is, but as it could be. 
             <br><br>
-            To join is to pledge loyalty to the craft. We do not just watch movies; we study them, critique them, and elevate them. This is an inner circle of excellence. If you have the vision, step into the shadow.
+            We do not just watch movies; we study them, critique them, and elevate them. This is an inner circle of excellence. If you have the vision, step into the shadow.
         </p>
 
-        <!-- Your Real WhatsApp Number is linked here -->
-        <a href="https://wa.me/2349055167974" target="_blank" class="join-btn">Join The Clan</a>
+        <!-- WHATSAPP BUTTON -->
+        <a href="https://wa.me/2349055167974" target="_blank" class="btn-whatsapp">
+            Join The Clan
+        </a>
     </header>
 
 </body>
