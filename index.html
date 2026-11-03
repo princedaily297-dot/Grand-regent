@@ -7,97 +7,218 @@
     
     <link rel="stylesheet" href="style.css">
     
-    <!-- Premium Cinematic Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Premium Cinematic Background */
+        /* --- PREMIUM BASE STYLES --- */
         body {
-            background: radial-gradient(circle at top, #1a1a1a 0%, #000000 100%);
+            background-color: #050505;
             color: #fff;
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
-        /* Full width hero section */
+        /* --- NAVBAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            position: absolute;
+            top: 0; left: 0; width: 100%;
+            box-sizing: border-box;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+        .logo {
+            color: #D4AF37;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .nav-links a.active {
+            color: #D4AF37;
+        }
+
+        /* --- FULL SCREEN HERO SECTION --- */
         .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Covers the full screen */
             display: flex;
             flex-direction: column;
+            justify-content: flex-end; /* Pushes text to the bottom */
             align-items: center;
             text-align: center;
-            padding: 80px 20px;
-            min-height: 80vh;
-            justify-content: center;
+            padding-bottom: 80px;
+            box-sizing: border-box;
         }
 
-        /* HUGE Garfield Image */
-        .hero-image {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 20px;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.2);
-            margin-bottom: 40px;
+        /* The Suit Image */
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
+            object-position: center top; /* Keeps his face in view */
+            z-index: -1;
         }
 
-        /* Cinematic Typography */
-        .hero-title {
-            font-family: 'Cinzel', serif; /* Hollywood Movie Font */
-            font-size: 4rem;
+        /* The Dark Fade so text is readable */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* This creates a smooth black fade at the bottom */
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(5,5,5,0.7) 60%, #050505 100%);
+            z-index: 0;
+        }
+
+        /* The Content inside the Hero */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        .welcome-text {
             color: #D4AF37;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            line-height: 1.1;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.8);
         }
 
         .story-text {
-            max-width: 700px;
-            color: #b3b3b3;
-            font-size: 1.1rem;
-            line-height: 1.9;
-            margin-bottom: 40px;
-            font-weight: 400;
+            color: #ccc;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
         }
 
         .btn-gold {
             background: #D4AF37;
             color: #000;
             padding: 15px 40px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
+            font-weight: 800;
             font-size: 1rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
         }
 
         .btn-gold:hover {
             background: #fff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(255, 255, 255, 0.4);
         }
 
-        /* Movie Header */
+        /* --- MOVIES SECTION --- */
+        .movies-container {
+            padding: 60px 30px;
+            background: #050505;
+            position: relative;
+            z-index: 2;
+        }
+
         .movies-header {
             text-align: center;
-            margin: 60px 0 40px;
+            margin-bottom: 40px;
         }
         .movies-header h2 {
             font-family: 'Cinzel', serif;
             font-size: 2.5rem;
-            color: #fff;
+            color: #D4AF37;
             letter-spacing: 2px;
+            margin: 0;
         }
         .movies-header p {
-            color: #D4AF37;
+            color: #888;
             font-size: 0.9rem;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-top: 10px;
+        }
+
+        /* Movie Grid styles (Kept from previous but cleaned up) */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .movie-card {
+            background: #111;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .movie-card:hover {
+            transform: translateY(-10px);
+        }
+        .movie-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+        .movie-info {
+            padding: 20px;
+            text-align: left;
+        }
+        .movie-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            margin: 0 0 5px 0;
+            color: #fff;
+        }
+        .movie-info p {
+            color: #D4AF37;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .hero-section { padding-bottom: 60px; }
+            .welcome-text { font-size: 0.75rem; letter-spacing: 4px; }
+            nav { padding: 15px 20px; }
         }
     </style>
 </head>
@@ -105,81 +226,92 @@
 
     <!-- NAVBAR -->
     <nav>
-        <a href="index.html" class="logo" style="color: #D4AF37; font-family: 'Cinzel', serif; font-size: 1.5rem; text-decoration: none;">GRAND REGENT</a>
+        <a href="index.html" class="logo">GRAND REGENT</a>
         <div class="nav-links">
-            <a href="index.html" style="color: #fff; text-decoration: none; margin-left: 20px;">Home</a>
-            <a href="clan.html" style="color: #D4AF37; text-decoration: none; margin-left: 20px;">The Clan</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="clan.html">The Clan</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- FULL SCREEN HERO SECTION -->
     <header class="hero-section">
         
-        <!-- HUGE GARFIELD SUIT IMAGE -->
-        <img src="https://i.ibb.co/VWpZtBqg/62bbaad8acd75e8086375cf842a9baf5.jpg" alt="The Grand Regent" class="hero-image">
+        <!-- YOUR ANDREW GARFIELD SUIT IMAGE -->
+        <!-- Replace this URL with your ImgBB direct link if it's different -->
+        <img src="https://i.ibb.co/5gSLvkfb/Screenshot-20261103-013413.jpg" alt="Andrew Garfield Suit" class="hero-bg">
         
-        <h1 class="hero-title">THE GRAND REGENT</h1>
-        
-        <p class="story-text">
-            Born from a vision to redefine the cinematic landscape, I am the architect of a new era. As one of the first original founders, my journey is driven by a relentless pursuit of storytelling, excellence, and unbreakable loyalty to the circle. I do not just curate films; I curate experiences, legacies, and the future of entertainment. This is the standard. This is the Regent.
-        </p>
+        <!-- The Dark Fade Effect -->
+        <div class="hero-overlay"></div>
 
-        <a href="clan.html" class="btn-gold">Discover The Clan</a>
+        <!-- Text Content -->
+        <div class="hero-content">
+            <p class="welcome-text">WELCOME TO THE UNIVERSE</p>
+            <h1 class="hero-title">THE GRAND REGENT</h1>
+            
+            <p class="story-text">
+                Born from a vision to redefine the cinematic landscape, I am the architect of a new era. As one of the first original founders, my journey is driven by a relentless pursuit of storytelling, excellence, and unbreakable loyalty to the circle.
+            </p>
+
+            <a href="clan.html" class="btn-gold">Enter The Clan</a>
+        </div>
     </header>
 
-    <!-- UPCOMING MOVIES -->
-    <div class="movies-header">
-        <h2>BLOCKBUSTERS</h2>
-        <p>Upcoming Cinematic Events</p>
-    </div>
-
-    <div class="movie-grid" style="padding-bottom: 60px;">
+    <!-- REST OF THE WEBSITE (SCROLL DOWN) -->
+    <div class="movies-container">
         
-        <!-- Deadpool -->
-        <div class="movie-card" onclick="openModal('Deadpool & Wolverine', '73_1biulkYk')">
-            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine">
-            <div class="movie-info">
-                <h3>Deadpool & Wolverine</h3>
-                <p style="color: #E50914;">Now Showing</p>
-            </div>
+        <div class="movies-header">
+            <h2>BLOCKBUSTERS</h2>
+            <p>The Future of Cinema</p>
         </div>
 
-        <!-- Joker 2 -->
-        <div class="movie-card" onclick="openModal('Joker: Folie à Deux', 'xy8aJw1vYHo')">
-            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Joker 2">
-            <div class="movie-info">
-                <h3>Joker: Folie à Deux</h3>
-                <p>Coming Soon</p>
+        <div class="movie-grid">
+            
+            <!-- Deadpool -->
+            <div class="movie-card" onclick="openModal('Deadpool & Wolverine', '73_1biulkYk')">
+                <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine">
+                <div class="movie-info">
+                    <h3>Deadpool & Wolverine</h3>
+                    <p>Action • Sci-Fi</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Gladiator 2 -->
-        <div class="movie-card" onclick="openModal('Gladiator II', 'rShGgWkosG4')">
-            <img src="https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmdJdU7pB7Yzbu.jpg" alt="Gladiator 2">
-            <div class="movie-info">
-                <h3>Gladiator II</h3>
-                <p>Coming Soon</p>
+            <!-- Joker 2 -->
+            <div class="movie-card" onclick="openModal('Joker: Folie à Deux', 'xy8aJw1vYHo')">
+                <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Joker 2">
+                <div class="movie-info">
+                    <h3>Joker: Folie à Deux</h3>
+                    <p>Drama • Musical</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Venom 3 -->
-        <div class="movie-card" onclick="openModal('Venom: The Last Dance', '__2bjWbetsA')">
-            <img src="https://image.tmdb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg" alt="Venom 3">
-            <div class="movie-info">
-                <h3>Venom: The Last Dance</h3>
-                <p>Coming Soon</p>
+            <!-- Gladiator 2 -->
+            <div class="movie-card" onclick="openModal('Gladiator II', 'rShGgWkosG4')">
+                <img src="https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmdJdU7pB7Yzbu.jpg" alt="Gladiator 2">
+                <div class="movie-info">
+                    <h3>Gladiator II</h3>
+                    <p>Action • History</p>
+                </div>
             </div>
-        </div>
 
+            <!-- Venom 3 -->
+            <div class="movie-card" onclick="openModal('Venom: The Last Dance', '__2bjWbetsA')">
+                <img src="https://image.tmdb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg" alt="Venom 3">
+                <div class="movie-info">
+                    <h3>Venom: The Last Dance</h3>
+                    <p>Action • Sci-Fi</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <!-- POPUP MODAL -->
-    <div class="modal" id="trailerModal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modal-title" style="font-family: 'Cinzel', serif;">Movie Title</h2>
-            <div class="video-container">
-                <iframe id="modal-video" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- POPUP MODAL (Keep this at the bottom) -->
+    <div class="modal" id="trailerModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: #111; padding: 20px; border-radius: 10px; width: 90%; max-width: 800px; position: relative;">
+            <span class="close-btn" onclick="closeModal()" style="position: absolute; top: -40px; right: 0; color: #fff; font-size: 40px; cursor: pointer;">&times;</span>
+            <h2 id="modal-title" style="font-family: 'Cinzel', serif; color: #D4AF37; margin-top: 0; text-align: center;">Movie Title</h2>
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe id="modal-video" src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
