@@ -3,228 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Grand Regent</title>
+    <title>Grand Regent</title>
     
-    <link rel="stylesheet" href="style.css">
-    
+    <!-- Premium Gothic Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- PREMIUM BASE STYLES --- */
-        body {
-            background-color: #050505;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-        /* --- NAVBAR --- */
+        /* NAVBAR */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 30px;
-            position: absolute;
-            top: 0; left: 0; width: 100%;
-            box-sizing: border-box;
-            z-index: 100;
-            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            position: absolute; top: 0; left: 0; width: 100%;
+            padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;
+            z-index: 100; background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
         }
-        .logo {
-            color: #D4AF37;
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            text-decoration: none;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .nav-links a.active {
-            color: #D4AF37;
-        }
+        .logo { font-family: 'Cinzel', serif; color: #D4AF37; font-size: 1.8rem; letter-spacing: 2px; text-decoration: none; font-weight: 900; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        .nav-links a:hover { color: #D4AF37; }
+        .nav-links a.active { color: #D4AF37; border-bottom: 2px solid #D4AF37; padding-bottom: 5px; }
 
-        /* --- FULL SCREEN HERO SECTION --- */
-        .hero-section {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Covers the full screen */
-            display: flex;
+        /* FULL SCREEN HERO (The Bold Suit Image) */
+        .hero {
+            position: relative; 
+            width: 100%; 
+            height: 100vh; 
+            display: flex; 
             flex-direction: column;
-            justify-content: flex-end; /* Pushes text to the bottom */
-            align-items: center;
-            text-align: center;
-            padding-bottom: 80px;
-            box-sizing: border-box;
+            justify-content: flex-end; 
+            align-items: center; 
+            text-align: center; 
+            padding-bottom: 60px;
         }
-
-        /* The Suit Image */
+        
+        /* THE SUIT IMAGE - BOLD AND FULL SCREEN */
         .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-            object-position: center top; /* Keeps his face in view */
-            z-index: -1;
-        }
-
-        /* The Dark Fade so text is readable */
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            /* This creates a smooth black fade at the bottom */
-            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(5,5,5,0.7) 60%, #050505 100%);
+            position: absolute; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
+            object-fit: cover; 
+            object-position: center 15%; /* Keeps him centered and bold */
             z-index: 0;
         }
 
-        /* The Content inside the Hero */
-        .hero-content {
-            position: relative;
+        /* CINEMATIC DARK FADE (So text is readable) */
+        .hero-fade {
+            position: absolute; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 50%, #050505 95%);
             z-index: 1;
-            padding: 0 20px;
-            max-width: 800px;
         }
 
-        .welcome-text {
-            color: #D4AF37;
-            font-size: 0.9rem;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+            max-width: 900px; 
+            padding: 0 20px; 
         }
 
         .hero-title {
+            font-family: 'Cinzel', serif; 
+            font-weight: 900;
+            font-size: 4.5rem; 
+            color: #fff; 
+            letter-spacing: 3px; 
+            line-height: 1.1; 
+            margin-bottom: 15px;
+            text-shadow: 0 10px 30px rgba(0,0,0,1);
+            text-transform: uppercase;
+        }
+
+        .hero-story {
+            font-size: 1rem; 
+            color: #ddd; 
+            line-height: 1.7; 
+            margin-bottom: 30px; 
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0,0,0,1); 
+            max-width: 650px; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+        .btn {
+            background: #D4AF37; 
+            color: #000; 
+            padding: 15px 40px; 
             font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            color: #ffffff;
-            letter-spacing: 2px;
-            margin: 0 0 20px 0;
-            text-transform: uppercase;
-            line-height: 1.1;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+            font-weight: 900; 
+            font-size: 1.1rem; 
+            letter-spacing: 2px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            transition: 0.3s;
+            display: inline-block; 
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
+        .btn:hover { background: #fff; box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); }
 
-        .story-text {
-            color: #ccc;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-        }
-
-        .btn-gold {
-            background: #D4AF37;
-            color: #000;
-            padding: 15px 40px;
-            font-weight: 800;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-gold:hover {
-            background: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(255, 255, 255, 0.4);
-        }
-
-        /* --- MOVIES SECTION --- */
-        .movies-container {
-            padding: 60px 30px;
-            background: #050505;
-            position: relative;
-            z-index: 2;
-        }
-
-        .movies-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .movies-header h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            color: #D4AF37;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-        .movies-header p {
-            color: #888;
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
-        /* Movie Grid styles (Kept from previous but cleaned up) */
+        /* MOVIES SECTION */
+        .movies-section { padding: 60px 30px; background: #050505; position: relative; z-index: 5; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-family: 'Cinzel', serif; font-size: 2.8rem; color: #D4AF37; letter-spacing: 3px; text-transform: uppercase; }
+        
         .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px;
+            max-width: 1200px; margin: 0 auto;
         }
         .movie-card {
-            background: #111;
-            border-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            background: #111; border-radius: 8px; overflow: hidden; cursor: pointer; transition: 0.3s;
+            border: 1px solid #222;
         }
-        .movie-card:hover {
-            transform: translateY(-10px);
-        }
-        .movie-card img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            display: block;
-        }
-        .movie-info {
-            padding: 20px;
-            text-align: left;
-        }
-        .movie-info h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            margin: 0 0 5px 0;
-            color: #fff;
-        }
-        .movie-info p {
-            color: #D4AF37;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0;
-        }
+        .movie-card:hover { transform: translateY(-8px); border-color: #D4AF37; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .movie-card img { width: 100%; height: 320px; object-fit: cover; display: block; }
 
         /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
-            .hero-section { padding-bottom: 60px; }
-            .welcome-text { font-size: 0.75rem; letter-spacing: 4px; }
+            .hero-title { font-size: 3rem; letter-spacing: 2px; }
+            .hero-story { font-size: 0.9rem; }
             nav { padding: 15px 20px; }
+            .logo { font-size: 1.5rem; }
+            .nav-links a { margin-left: 15px; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <nav>
         <a href="index.html" class="logo">GRAND REGENT</a>
         <div class="nav-links">
@@ -233,89 +140,38 @@
         </div>
     </nav>
 
-    <!-- FULL SCREEN HERO SECTION -->
-    <header class="hero-section">
+    <header class="hero">
+        <!-- YOUR BOLD SUIT IMAGE -->
+        <img src="https://i.ibb.co/LDL9q5bs/42cde95b2d623de032e4eef27d03a5e4.jpg" alt="Grand Regent" class="hero-bg">
         
-        <!-- YOUR ANDREW GARFIELD SUIT IMAGE -->
-        <!-- Replace this URL with your ImgBB direct link if it's different -->
-        <img src="https://i.ibb.co/5gSLvkfb/Screenshot-20261103-013413.jpg" alt="Andrew Garfield Suit" class="hero-bg">
-        
-        <!-- The Dark Fade Effect -->
-        <div class="hero-overlay"></div>
+        <div class="hero-fade"></div>
 
-        <!-- Text Content -->
         <div class="hero-content">
-            <p class="welcome-text">WELCOME TO THE UNIVERSE</p>
             <h1 class="hero-title">THE GRAND REGENT</h1>
-            
-            <p class="story-text">
-                Born from a vision to redefine the cinematic landscape, I am the architect of a new era. As one of the first original founders, my journey is driven by a relentless pursuit of storytelling, excellence, and unbreakable loyalty to the circle.
+            <p class="hero-story">
+                Born from a vision to redefine the cinematic landscape, I am the architect of a new era. As one of the first original founders, my journey is driven by a relentless pursuit of storytelling and unbreakable loyalty to the circle.
             </p>
-
-            <a href="clan.html" class="btn-gold">Enter The Clan</a>
+            <a href="clan.html" class="btn">ENTER THE CLAN</a>
         </div>
     </header>
 
-    <!-- REST OF THE WEBSITE (SCROLL DOWN) -->
-    <div class="movies-container">
-        
-        <div class="movies-header">
+    <div class="movies-section">
+        <div class="section-header">
             <h2>BLOCKBUSTERS</h2>
-            <p>The Future of Cinema</p>
         </div>
 
         <div class="movie-grid">
-            
-            <!-- Deadpool -->
-            <div class="movie-card" onclick="openModal('Deadpool & Wolverine', '73_1biulkYk')">
-                <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine">
-                <div class="movie-info">
-                    <h3>Deadpool & Wolverine</h3>
-                    <p>Action • Sci-Fi</p>
-                </div>
-            </div>
-
-            <!-- Joker 2 -->
-            <div class="movie-card" onclick="openModal('Joker: Folie à Deux', 'xy8aJw1vYHo')">
-                <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Joker 2">
-                <div class="movie-info">
-                    <h3>Joker: Folie à Deux</h3>
-                    <p>Drama • Musical</p>
-                </div>
-            </div>
-
-            <!-- Gladiator 2 -->
-            <div class="movie-card" onclick="openModal('Gladiator II', 'rShGgWkosG4')">
-                <img src="https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmdJdU7pB7Yzbu.jpg" alt="Gladiator 2">
-                <div class="movie-info">
-                    <h3>Gladiator II</h3>
-                    <p>Action • History</p>
-                </div>
-            </div>
-
-            <!-- Venom 3 -->
-            <div class="movie-card" onclick="openModal('Venom: The Last Dance', '__2bjWbetsA')">
-                <img src="https://image.tmdb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg" alt="Venom 3">
-                <div class="movie-info">
-                    <h3>Venom: The Last Dance</h3>
-                    <p>Action • Sci-Fi</p>
-                </div>
-            </div>
-
+            <div class="movie-card"><img src="https://i.ibb.co/h11mJScJ/b0c30a33c9a9a9aa9ed4d63d7d22a191.jpg" alt="Movie 1"></div>
+            <div class="movie-card"><img src="https://i.ibb.co/whTckYkg/62bbaad8acd75e8086375cf842a9baf5.jpg" alt="Movie 2"></div>
+            <div class="movie-card"><img src="https://i.ibb.co/Jwy3Dw6y/b9e77c629f502b18110ed52aaf3bdd79.jpg" alt="Movie 3"></div>
+            <div class="movie-card"><img src="https://i.ibb.co/0RSTdLCK/01cd48300528c8424812cf59e5ce3756.jpg" alt="Movie 4"></div>
+            <div class="movie-card"><img src="https://i.ibb.co/VWpZtBqg/62bbaad8acd75e8086375cf842a9baf5.jpg" alt="Movie 5"></div>
+            <div class="movie-card"><img src="https://i.ibb.co/DgQWQrwj/b23aaf69d8566db1ba5ecaa1187f44be.jpg" alt="Movie 6"></div>
+            <div class="movie-card"><img src="https://i.ibb.co/q3mWQb2D/42cde95b2d623de032e4eef27d03a5e4.jpg" alt="Movie 7"></div>
+            <div class="movie-card"><img src="https://i.ibb.co/9PW2zk9/01cd48300528c8424812cf59e5ce3756.jpg" alt="Movie 8"></div>
+            <div class="movie-card"><img src="https://i.ibb.co/bRgMF6V4/62bbaad8acd75e8086375cf842a9baf5.jpg" alt="Movie 9"></div>
         </div>
     </div>
 
-    <!-- POPUP MODAL (Keep this at the bottom) -->
-    <div class="modal" id="trailerModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center;">
-        <div class="modal-content" style="background: #111; padding: 20px; border-radius: 10px; width: 90%; max-width: 800px; position: relative;">
-            <span class="close-btn" onclick="closeModal()" style="position: absolute; top: -40px; right: 0; color: #fff; font-size: 40px; cursor: pointer;">&times;</span>
-            <h2 id="modal-title" style="font-family: 'Cinzel', serif; color: #D4AF37; margin-top: 0; text-align: center;">Movie Title</h2>
-            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                <iframe id="modal-video" src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
