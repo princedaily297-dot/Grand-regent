@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Regent - Cinematic Universe</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#" class="logo">Grand Regent</a>
+        <div class="nav-links">
+            <a href="#">Movies</a>
+            <a href="#">Artists</a>
+            <a href="#">Trailers</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Enter The Universe</h1>
+        <p>Premium Cinema & Trailers</p>
+    </header>
+
+    <!-- ARTISTS SECTION -->
+    <h2 class="section-title">Starring Artists</h2>
+    <div class="artist-grid">
+        <!-- Artist 1 -->
+        <div>
+            <div class="artist-card">
+                <img src="https://image.tmdb.org/t/p/w300/4D0PpNI0kmP58hgrwGC3a37nZUq.jpg" alt="Keanu Reeves">
+            </div>
+            <div class="artist-name">Keanu Reeves</div>
+        </div>
+        <!-- Artist 2 -->
+        <div>
+            <div class="artist-card">
+                <img src="https://image.tmdb.org/t/p/w300/trzgWMHWAzHSRKYgCw6P0eS9o2R.jpg" alt="Ryan Reynolds">
+            </div>
+            <div class="artist-name">Ryan Reynolds</div>
+        </div>
+        <!-- Artist 3 -->
+        <div>
+            <div class="artist-card">
+                <img src="https://image.tmdb.org/t/p/w300/3WdOloHpjtjL96eDXD6W2lR9b1B.jpg" alt="Zendaya">
+            </div>
+            <div class="artist-name">Zendaya</div>
+        </div>
+        <!-- Artist 4 -->
+        <div>
+            <div class="artist-card">
+                <img src="https://image.tmdb.org/t/p/w300/4D0PpNI0kmP58hgrwGC3a37nZUq.jpg" alt="Denzel Washington">
+            </div>
+            <div class="artist-name">Denzel Washington</div>
+        </div>
+    </div>
+
+    <!-- UPCOMING MOVIES SECTION -->
+    <h2 class="section-title">Upcoming Blockbusters</h2>
+    <div class="movie-grid">
+        
+        <!-- MOVIE 1 -->
+        <div class="movie-card" onclick="openModal('Deadpool & Wolverine', '73_1biulkYk')">
+            <span class="badge">In Cinemas</span>
+            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine">
+            <div class="movie-info">
+                <h3>Deadpool & Wolverine</h3>
+                <p>Action • Sci-Fi</p>
+            </div>
+        </div>
+
+        <!-- MOVIE 2 -->
+        <div class="movie-card" onclick="openModal('Joker: Folie à Deux', 'xy8aJw1vYHo')">
+            <span class="badge" style="background: #E50914; color: #fff;">Upcoming</span>
+            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Joker 2">
+            <div class="movie-info">
+                <h3>Joker: Folie à Deux</h3>
+                <p>Drama • Musical</p>
+            </div>
+        </div>
+
+        <!-- MOVIE 3 -->
+        <div class="movie-card" onclick="openModal('Gladiator II', 'rShGgWkosG4')">
+            <span class="badge" style="background: #E50914; color: #fff;">Upcoming</span>
+            <img src="https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmdJdU7pB7Yzbu.jpg" alt="Gladiator 2">
+            <div class="movie-info">
+                <h3>Gladiator II</h3>
+                <p>Action • History</p>
+            </div>
+        </div>
+
+        <!-- MOVIE 4 -->
+        <div class="movie-card" onclick="openModal('Venom: The Last Dance', '__2bjWbetsA')">
+            <span class="badge" style="background: #E50914; color: #fff;">Upcoming</span>
+            <img src="https://image.tmdb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg" alt="Venom 3">
+            <div class="movie-info">
+                <h3>Venom: The Last Dance</h3>
+                <p>Action • Sci-Fi</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL (POPUP) -->
+    <div class="modal" id="trailerModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Movie Title</h2>
+            
+            <!-- YouTube Video Player -->
+            <div class="video-container">
+                <iframe id="modal-video" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
